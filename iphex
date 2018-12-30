@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $# -lt 1 ]
+then
+	echo "IP-Address to HEX converter"
+	echo "Usage:   \"`basename $0` IPADDRESS\""
+	echo "  e.g.    `basename $0` 127.0.0.1 = `$0 127.0.0.1`"
+else
+	IP_ADDR=$1
+	printf '%02X' ${IP_ADDR//./ }; echo
+fi
